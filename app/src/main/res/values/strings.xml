@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Numbers Light</string>
+    <string name="error_loading_data">Data could not be loaded!</string>
+    <string name="error_data_null">Data is null!</string>
+    <string name="detail_activity_name">Detail View</string>
 </resources>

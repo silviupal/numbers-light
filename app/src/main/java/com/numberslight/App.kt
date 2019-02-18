@@ -2,7 +2,6 @@ package com.numberslight
 
 import android.app.Application
 import com.numberslight.dagger.ApiComponent
-import com.numberslight.dagger.ApiModule
 import com.numberslight.dagger.DaggerApiComponent
 
 /**

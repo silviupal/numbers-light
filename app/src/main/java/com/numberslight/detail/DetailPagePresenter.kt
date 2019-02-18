@@ -1,4 +1,4 @@
-package com.numberslight.main
+package com.numberslight.detail
 
 import com.numberslight.App
 import com.numberslight.R
@@ -9,18 +9,18 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Created by Silviu Pal on 18/02/2019.
  */
-class MainPresenter : BasePresenter<MainContract.View>(), MainContract.Presenter {
+class DetailPagePresenter : BasePresenter<DetailPageContract.View>(), DetailPageContract.Presenter {
     init {
         App.instance.apiComponent.inject(this)
     }
 
-    override fun getData() {
-        api.getData()
+    override fun getData(name: String) {
+        api.getDetailData(name)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ list ->
-                list?.let {
-                    view?.updateList(it)
+            .subscribe({ item ->
+                item?.let {
+                    view?.updateUI(it)
                 } ?: view?.showError(R.string.error_data_null)
             }, {
                 view?.showError(R.string.error_loading_data)

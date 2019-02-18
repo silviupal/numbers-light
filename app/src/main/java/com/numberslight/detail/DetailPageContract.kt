@@ -1,19 +1,19 @@
-package com.numberslight.main
+package com.numberslight.detail
 
 import androidx.annotation.StringRes
 import com.numberslight.base.IBasePresenter
-import com.numberslight.model.ItemModel
+import com.numberslight.model.DetailItemModel
 
 /**
  * Created by Silviu Pal on 18/02/2019.
  */
-interface MainContract {
+interface DetailPageContract {
     interface View {
-        fun updateList(list: List<ItemModel>)
+        fun updateUI(item: DetailItemModel)
         fun showError(@StringRes errorRes: Int)
     }
 
     interface Presenter : IBasePresenter<View> {
-        fun getData()
+        fun getData(name: String)
     }
 }
